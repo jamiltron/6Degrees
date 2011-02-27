@@ -1,0 +1,165 @@
+[
+    {
+        "server" : "./servers/RequestServer",
+        "port" : "8088",
+        "host" : "dougamartin.com",
+        "path" : "/6Degrees",
+        "POST" : {
+            "methods" : [
+                {
+                    "handler" : "../../services/auth.js",
+                    "operations" : [
+                        {
+                            "method" : "login",
+                            "params" : "email,password",
+                            "path" : "/auth/login",
+                            "session" : false
+                        },
+                        {
+                            "method" : "createUserFromFacebook",
+                            "params" : "user",
+                            "path" : "/auth/createUser",
+                            "session" : false
+                        }
+                    ]
+                },
+                {
+                    "handler" : "../../services/image.js",
+                    "operations" : [
+                        {
+                            "method" : "setProfilePic",
+                            "path" : "/image/profile",
+                            "session" : true
+                        }
+                    ]
+                },
+                {
+                    "handler" : "../../services/user.js",
+                    "operations" : [
+                        {
+                            "method" : "sendMessage",
+                            "path" : "/user/sendMessage",
+                            "params" : "to,message",
+                            "session" : true
+                        }
+                    ]
+                }
+            ]
+        },
+        "GET" : {
+            "dirs" : [
+                {
+                    "path" : "/js/",
+                    "dir" : "../web/js/"
+                },
+                {
+                    "path" : "/css/",
+                    "dir" : "../web/css/"
+                },
+                {
+                    "path" : "/images/",
+                    "dir" : "../web/images/"
+                }
+            ],
+            "methods" : [
+                {
+                    "handler" : "../../services/auth.js",
+                    "operations" : [
+                        {
+                            "method" : "checkStatus",
+                            "path" : "/auth/checkStatus",
+                            "session" : false,
+                            "path" : "/"
+                        },
+                        {
+                            "method" : "checkStatus",
+                            "path" : "/auth/checkStatus",
+                            "session" : false,
+                            "path" : ""
+                        },
+                        {
+                            "method" : "logout",
+                            "path" : "/auth/logout",
+                            "session" : false
+                        }
+                    ]
+                },
+                {
+                    "handler" : "../../services/user.js",
+                    "operations" : [
+                        {
+                            "method" : "getFriends",
+                            "path" : "/user/getFriends",
+                            "session" : true
+                        },
+                        {
+                            "method" : "findConnection",
+                            "path" : "/user/findConnection",
+                            "params" : "target",
+                            "session" : true
+                        },
+                        {
+                            "method" : "getInfo",
+                            "path" : "/user/getInfo",
+                            "session" : true
+                        },
+                        {
+                            "method" : "getFriendInfo",
+                            "path" : "/friend/getInfo",
+                            "params" : "id",
+                            "session" : true
+                        },
+                        {
+                            "method" : "searchForUsers",
+                            "params" : "name",
+                            "path"   : "/users/search/",
+                            "session" : true
+                        }
+                    ]
+                },
+                {
+                    "handler" : "../../services/image.js",
+                    "operations" : [
+                        {
+                            "method" : "getProfilePic",
+                            "path" : "/image/profile",
+                            "params" : "id",
+                            "session" : true
+                        },
+                        {
+                            "method" : "getProfileForUser",
+                            "path" : "/image/getProfilePic",
+                            "params" : "id,width,height",
+                            "session" : true
+                        }
+                    ]
+                }
+            ]
+        },
+        "welcomeFiles" :  [
+            {
+                "path" : "/logon",
+                "file" : "../web/logon.html"
+            },
+            {
+                "path" : "/home",
+                "session" : true,
+                "file" : "../web/home.html"
+            }
+        ],
+        "errorFiles" : [
+            {
+                "code" : 404,
+                "file" : "../web/error.html"
+            },
+            {
+                "code" : 405,
+                "file" : "../web/error.html"
+            },
+            {
+                "code" : 401,
+                "file" : "../web/unauthorized.html"
+            }
+        ]
+    }
+]

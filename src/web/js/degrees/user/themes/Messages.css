@@ -1,0 +1,25 @@
+.degreesUserMessages {
+    background:  transparent;
+}
+
+.degreesUserMessages .messageContainer{
+    height : 70%;
+    overflow : auto;
+}
+
+.degreesUserMessage {
+
+}
+
+.degreesUserMessage .from{    
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.degreesUserMessage .time{
+    font-size: 9px;
+}
+
+.degreesUserMessage .image{
+    cursor : pointer;
+}

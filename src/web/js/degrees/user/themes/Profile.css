@@ -1,0 +1,81 @@
+.degreesUserProfile{
+
+}
+
+.degreesUserProfile .holder{
+    display : inline-block;
+    vertical-align:top;
+    padding : 5px;
+}
+
+.degreesUserProfile .label{
+    font-weight: bold;
+    text-align:left;
+    vertical-align:top;
+}
+
+.degreesUserProfile .infoTable{
+    height : 20%;
+}
+
+.degreesUserProfile .messages{
+    height : 70%;
+}
+
+.degreesUserProfile .tableHeader{        
+    width : 100px;
+}
+
+.degreesUserProfilePicture{
+    position : relative;
+     border : white medium solid;
+}
+
+.degreesUserProfilePicture .img{
+    width : 100%;
+}
+
+.degreesUserProfilePictureHover{
+    border : gray medium solid;
+}
+
+.degreesUserProfilePicture .edit{
+    display : none;
+    background: url('../../../../images/edit.png') no-repeat;
+    width : 25px;
+    height : 25px;
+    position : absolute;
+    bottom : 0px;
+    right : 0px;
+    cursor : pointer;
+}
+
+.degreesUserProfilePictureHover .edit{
+    display : block;    
+}
+
+.degreesUserProfilePictureHover .fileUploader{
+    cursor : pointer;
+    vislble : false;
+    opacity : 0;
+    filter:alpha(opacity:0);
+    width : 100%;
+    height : 100%;
+}
+
+.degreesUserProfile .leftPane{
+    width : 20%;
+    height : 100%;
+}
+
+.degreesUserProfile .rightPane{
+    vertical-align:top;
+    width : 70%;
+    height : 100%;
+}
+
+.degreesUserProfile .information {
+    font-size: 20px;
+    font-weight: bold;
+    height : 5%;
+}
